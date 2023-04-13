@@ -1,13 +1,25 @@
 <?php
 declare(strict_types = 1);
 //TODO: Entrada de datos por terminal o formulario.
-$numbers = [1,4,7];
-if(checkArray($numbers)) {
-	print_r(getLostNumbers($numbers));
+$case1 = [1,4,7];
+$case2 = [1,2];
+$case3 = [];
+$case4 = [3,2];
+$case5 = [1,999];
+$case6 = ['1',3];
+$case7 = [1,5,6,'7',8];
+
+$cases = [$case1,$case2,$case3,$case4,$case5,$case6,$case7];
+
+foreach($cases as $case) {
+	if(checkArray($case)) {
+		print_r(getLostNumbers($case));
+	}
+	else {
+		echo "Ordered integer array entered not valid. So sorry:(".PHP_EOL;
+	}
 }
-else {
-	echo "Ordered integer array entered not valid. So sorry:(";
-}
+
 
 /*
 No aclaran que es un array incorrecto. Asumo que, o bien no está ordenado, o bien
